@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93B044EA-9B59-4C7E-8521-899EB4211D8D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TestMarketUI</RootNamespace>
+    <AssemblyName>TestMarketUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\SqlConnectionString.cs" />
+    <Compile Include="Factory\DbFactory.cs" />
+    <Compile Include="MustBeDeleted\Test.cs" />
+    <Compile Include="Presentation\ClearCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ClearCredit.Designer.cs">
+      <DependentUpon>ClearCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configurations\Configuration.cs" />
+    <Compile Include="Contracts\ICreditRepository.cs" />
+    <Compile Include="Contracts\ICustomerRepository.cs" />
+    <Compile Include="Contracts\IPaymentRepository.cs" />
+    <Compile Include="Contracts\IUnitOfWork.cs" />
+    <Compile Include="Presentation\CustomersData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\CustomersData.Designer.cs">
+      <DependentUpon>CustomersData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DailyGivenCredits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DailyGivenCredits.Designer.cs">
+      <DependentUpon>DailyGivenCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DailySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DailySales.Designer.cs">
+      <DependentUpon>DailySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SqlCreditRepository.cs" />
+    <Compile Include="DataAccess\SqlCustomerRepository.cs" />
+    <Compile Include="DataAccess\SqlPaymentRepository.cs" />
+    <Compile Include="DataAccess\SqlUnitOfWork.cs" />
+    <Compile Include="DataAccess\Entities\Credit.cs" />
+    <Compile Include="DataAccess\Entities\Customer.cs" />
+    <Compile Include="DataAccess\Entities\Payment.cs" />
+    <Compile Include="Presentation\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\NewSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\NewSale.Designer.cs">
+      <DependentUpon>NewSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\SqlReaderExtension.cs" />
+    <Compile Include="ServerConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerConnection.Designer.cs">
+      <DependentUpon>ServerConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\ServerType.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <EmbeddedResource Include="Presentation\ClearCredit.resx">
+      <DependentUpon>ClearCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\CustomersData.resx">
+      <DependentUpon>CustomersData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DailyGivenCredits.resx">
+      <DependentUpon>DailyGivenCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DailySales.resx">
+      <DependentUpon>DailySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\NewSale.resx">
+      <DependentUpon>NewSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ServerConnection.resx">
+      <DependentUpon>ServerConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Configurations\Configuration.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\TestMarketUI.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\TestMarketUI.Properties.Settings.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-accounting-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-product-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-to-collection-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bill-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-categorize-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-categorize-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-client-management-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-sign-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-sign-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-tag-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-privacy-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-product-management-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-product-management-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-scan-stock-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sell-stock-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shutdown-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shutdown-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-software-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-warehouse-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-warehouse-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_log_off.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleted %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\delete %282%29.png" />
+    <Content Include="Resources\delete %283%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

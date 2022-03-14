@@ -1,0 +1,5 @@
+﻿{
+  "Data Source": "localhost",
+  "Initial Catalog": "MyMarketDB",
+  "Integrated Security": "True"
+}
