@@ -1,5 +1,4 @@
-﻿using TestMarketUI.Extensions;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,7 +13,7 @@ namespace TestMarketUI.Configurations
     {
         public static string ServerName;
         public static string DataBaseName;
-        public const string pathConfigText = @"C:\Users\User\source\repos\TestMarketUI\Configurations\Configuration.json";
+        public readonly static string pathConfigText = @"H:\Market_Proqram\TestMarketUI\Configurations\Configuration.json";
         public static bool WriteConfiguationData(string servername, string dbname)
         {
             try
@@ -35,10 +34,11 @@ namespace TestMarketUI.Configurations
         }
         public static bool CheckExist()
         {
-            if (File.Exists(pathConfigText) && !File.ReadAllText(pathConfigText).IsNull())
+            if (File.Exists(pathConfigText) && !string.IsNullOrEmpty(File.ReadAllText(pathConfigText)))
             {
                 return true;
             }
+            
             return false;
         }
         public static bool CheckConnectionInfo()

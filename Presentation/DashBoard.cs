@@ -47,11 +47,6 @@ namespace TestMarketUI
 
         }
 
-        private void DashBoard_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void AllCreditsRecBut_Click(object sender, EventArgs e)
         {
             DailySales dailySales = new DailySales();
@@ -67,6 +62,11 @@ namespace TestMarketUI
             credits.Show();
             this.Hide();
             credits.FormClosed += (s, a) => this.Close();
+
+        }
+
+        private void DashBoard_Load(object sender, EventArgs e)
+        {
 
         }
     }

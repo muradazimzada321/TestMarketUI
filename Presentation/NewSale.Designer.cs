@@ -52,18 +52,15 @@ namespace TestMarketUI
             // 
             this.customersBindingSource.DataMember = "Customers";
             // 
-            // myMarketDBDataSet
-            // 
-            // 
             // label
             // 
             this.label.AutoSize = true;
             this.label.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label.Font = new System.Drawing.Font("A2 Arial AzLat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label.Location = new System.Drawing.Point(114, 145);
             this.label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(127, 23);
+            this.label.Size = new System.Drawing.Size(136, 25);
             this.label.TabIndex = 2;
             this.label.Text = "Müştəri kodu";
             // 
@@ -71,21 +68,21 @@ namespace TestMarketUI
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Font = new System.Drawing.Font("A2 Arial AzLat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(15, 304);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 23);
+            this.label1.Size = new System.Drawing.Size(238, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Əlavə olunacaq məbləğ";
             // 
             // NewSaleAmTB
             // 
-            this.NewSaleAmTB.Font = new System.Drawing.Font("A2 Arial AzLat", 15.75F);
+            this.NewSaleAmTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.NewSaleAmTB.Location = new System.Drawing.Point(266, 301);
             this.NewSaleAmTB.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.NewSaleAmTB.Name = "NewGivenCretidAmTB";
-            this.NewSaleAmTB.Size = new System.Drawing.Size(276, 32);
+            this.NewSaleAmTB.Name = "NewSaleAmTB";
+            this.NewSaleAmTB.Size = new System.Drawing.Size(276, 31);
             this.NewSaleAmTB.TabIndex = 2;
             // 
             // SaveB
@@ -112,11 +109,11 @@ namespace TestMarketUI
             // 
             // CustomerIdTB
             // 
-            this.CustomerIdTB.Font = new System.Drawing.Font("A2 Arial AzLat", 15.75F);
+            this.CustomerIdTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.CustomerIdTB.Location = new System.Drawing.Point(266, 139);
             this.CustomerIdTB.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.CustomerIdTB.Name = "CustomerIdTB";
-            this.CustomerIdTB.Size = new System.Drawing.Size(276, 32);
+            this.CustomerIdTB.Size = new System.Drawing.Size(276, 31);
             this.CustomerIdTB.TabIndex = 1;
             // 
             // SearchBut
@@ -143,21 +140,22 @@ namespace TestMarketUI
             this.dataclientGW.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataclientGW.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataclientGW.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.dataclientGW.Location = new System.Drawing.Point(785, 189);
+            this.dataclientGW.Location = new System.Drawing.Point(756, 189);
             this.dataclientGW.Name = "dataclientGW";
             this.dataclientGW.ReadOnly = true;
-            this.dataclientGW.Size = new System.Drawing.Size(503, 125);
+            this.dataclientGW.Size = new System.Drawing.Size(602, 110);
             this.dataclientGW.TabIndex = 3;
             this.dataclientGW.VirtualMode = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(781, 139);
+            this.label2.Location = new System.Drawing.Point(751, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 23);
+            this.label2.Size = new System.Drawing.Size(228, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Müştərinin məlumatları";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // backMenu
             // 
@@ -166,7 +164,7 @@ namespace TestMarketUI
             this.backMenu.LinkColor = System.Drawing.Color.Blue;
             this.backMenu.Location = new System.Drawing.Point(12, 31);
             this.backMenu.Name = "backMenu";
-            this.backMenu.Size = new System.Drawing.Size(148, 23);
+            this.backMenu.Size = new System.Drawing.Size(152, 25);
             this.backMenu.TabIndex = 8;
             this.backMenu.TabStop = true;
             this.backMenu.Text = "Menyuya qayıt";
@@ -177,11 +175,11 @@ namespace TestMarketUI
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.No;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("A2 Arial AzLat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Ivory;
             this.label3.Location = new System.Drawing.Point(570, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 30);
+            this.label3.Size = new System.Drawing.Size(144, 31);
             this.label3.TabIndex = 9;
             this.label3.Text = "Yeni Nisyə";
             // 
@@ -191,7 +189,7 @@ namespace TestMarketUI
             // 
             // NewSale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(1370, 744);
@@ -206,7 +204,7 @@ namespace TestMarketUI
             this.Controls.Add(this.NewSaleAmTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label);
-            this.Font = new System.Drawing.Font("A2 Arial AzLat", 15.75F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "NewSale";
             this.Text = "Satış";

@@ -20,13 +20,12 @@ namespace TestMarketUI
             
             InitializeComponent();
             ShowDailyLoansData();
-            //daTimePicker.Format = DateTimePickerFormat.Custom;
-            //daTimePicker.CustomFormat = "dd-MM-yyyy";
+            daTimePicker.Value = DateTime.Today;
         }
-        readonly SqlConnection sqlCon = new SqlConnection(@"Data Source=ACER-2021;Initial Catalog=MyMarketDB;Integrated Security=True");
+        readonly SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost;Initial Catalog=MyMarketDB;Integrated Security=True");
         void ShowDailyLoansData()
         {
-            SqlCommand sqlCommand = new SqlCommand("GetDailyLoans", sqlCon)
+            SqlCommand sqlCommand = new SqlCommand("GetDailyCredits", sqlCon)
             { CommandType = CommandType.StoredProcedure };
 
             try
@@ -45,38 +44,74 @@ namespace TestMarketUI
             {
                 MessageBox.Show(e.Message);
 
-                MessageBox.Show("Something went wong");
+                MessageBox.Show("Nese sehv oldu");
+            }
+            finally
+            {
+                sqlCon.Close();
             }
 
         }
-
-
-
-
-
-
-        private void DailySales_Load(object sender, EventArgs e)
-        {
-            
-            
-        }
-
         private void daTimePicker_ValueChanged(object sender, EventArgs e)
         {
             ShowDailyLoansData();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void backMenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
             DashBoard dashBoard = new DashBoard();
             dashBoard.Show();
             this.Hide();
+            dashBoard.FormClosed += (s, a) => this.Close();
+
+        }
+
+        private void DailySales_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AllCreditsBtn_Click(object sender, EventArgs e)
+        {
+            SqlCommand sqlCommand = new SqlCommand("select dbo.GetAllCurrentCreditsAmount()", sqlCon)
+            { CommandType = CommandType.Text };
+
+            try
+            {
+                sqlCon.Open();
+                decimal allamount =  sqlCommand.ExecuteScalar() ==DBNull.Value? 0: (decimal)sqlCommand.ExecuteScalar();
+                MessageBox.Show($"bütün alınan nisyələrin cəmi : {allamount} ");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wong");
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
+        }
+        
+        private void todayscreditsButton_Click(object sender, EventArgs e)
+        {
+            SqlCommand sqlCommand = new SqlCommand("select dbo.GetAllCreditAmountBasedOnDate(@date)", sqlCon)
+            { CommandType = CommandType.Text };
+
+            try
+            {
+                sqlCon.Open();
+                sqlCommand.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString("yyyy-MM-dd"));
+                decimal allamount =  sqlCommand.ExecuteScalar() ==DBNull.Value? 0: (decimal)sqlCommand.ExecuteScalar();
+                MessageBox.Show($"Bügün alınan nisyələrin cəmi : {allamount} ");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nəsə səhv getdi");
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
         }
     }
 }
