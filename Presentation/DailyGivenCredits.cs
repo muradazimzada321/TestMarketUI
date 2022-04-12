@@ -92,7 +92,7 @@ namespace TestMarketUI
                 sqlCommand.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString("yyyy-MM-dd"));
                 decimal allamount = sqlCommand.ExecuteScalar() == DBNull.Value ? 0 : (decimal)sqlCommand.ExecuteScalar();
                 MessageBox.Show($"Bügün veril nisyələrin cəmi : {allamount} ");
-            }
+            } 
             catch (Exception)
             {
                 MessageBox.Show("Nəsə səhv getdi");
